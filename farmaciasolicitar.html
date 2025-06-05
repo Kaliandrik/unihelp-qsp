@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UniHelp - Plataforma de agendamento de consultas médicas especializadas. Conectamos pacientes a profissionais de saúde.">
+  <meta name="keywords" content="consulta médica, agendamento online, saúde, fisioterapia, psicólogo">
+  <meta name="author" content="UniHelp">
+  <meta property="og:title" content="UniHelp - Agendamento de Consultas">
+  <meta property="og:type" content="website">
+  
+  <title>cabecalho</title>
+  
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="06 - farmacia solidaria/farmaciasolicitar.css">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="/">
+            <img src="06 - farmacia solidaria/img/UniHelp Logo.png" alt="UniHelp - Logo" width="150" height="50" class="logo__img">
+          </a>
+        </div>
+        
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="hamburger"></span>
+        </button>
+        
+        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#" class="nav__link" aria-current="page">Início</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">Serviços</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">Sobre Nós</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
+            <span id="horaData">00:00 | 00/00/0000</span>
+            <li class="nav__item">
+              <a href="#" class="user-profile" aria-label="Perfil do usuário">
+                <img src="06 - farmacia solidaria/img/seu perfil.jpg" alt="Foto do perfil" width="40" height="40">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+ <title>Solicitar Equipamento - UniHelp</title>
+  
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="request-hero">
+      <div class="container">
+        <h1>Solicitar Equipamento</h1>
+        <p>Preencha o formulário abaixo para solicitar equipamentos de mobilidade ou medicamentos. Nossa equipe entrará em contato para confirmar a disponibilidade.</p>
+        <a href="#request-form" class="btn btn--primary" id="scrollToRequestForm">Solicitar Agora</a>
+      </div>
+    </section>
+
+    <!-- Available Equipment Section -->
+    <section class="equipment-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Equipamentos Disponíveis</h2>
+          <p>Confira os tipos de equipamentos que você pode solicitar através do nosso sistema.</p>
+        </div>
+        <div class="equipment-cards">
+          <div class="equipment-card">
+            <div class="card-image">
+              <img src="06 - farmacia solidaria/img/cadeirarodas.jpg" alt="Cadeira de rodas">
+            </div>
+            <div class="card-content">
+              <h3>Cadeiras de Rodas</h3>
+              <p>Disponíveis em vários modelos para atender diferentes necessidades de mobilidade.</p>
+              <div class="availability">Disponibilidade: <span class="available">Alta</span></div>
+            </div>
+          </div>
+          
+          <div class="equipment-card">
+            <div class="card-image">
+              <img src="06 - farmacia solidaria/img/muletas.jpg" alt="Muletas">
+            </div>
+            <div class="card-content">
+              <h3>Muletas e Andadores</h3>
+              <p>Para auxiliar na locomoção durante recuperação de lesões ou cirurgias.</p>
+              <div class="availability">Disponibilidade: <span class="available">Média</span></div>
+            </div>
+          </div>
+
+          <div class="equipment-card">
+            <div class="card-image">
+              <img src="img/oxigenio.jpg" alt="Oxigênio">
+            </div>
+            <div class="card-content">
+              <h3>Concentradores de Oxigênio</h3>
+              <p>Para pacientes com dificuldades respiratórias que necessitam de suporte.</p>
+              <div class="availability">Disponibilidade: <span class="limited">Limitada</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Request Form -->
+    <section id="request-form" class="request-section">
+      <div class="container">
+        <div class="request-form">
+          <h2 class="section-title">Formulário de Solicitação</h2>
+          <form id="equipmentRequestForm">
+            <div class="form-group">
+              <label for="equipmentType">Tipo de Equipamento*</label>
+              <select id="equipmentType" class="form-control" required>
+                <option value="">Selecione o equipamento</option>
+                <option value="wheelchair">Cadeira de rodas</option>
+                <option value="crutches">Muletas</option>
+                <option value="walker">Andador</option>
+                <option value="oxygen">Concentrador de oxigênio</option>
+                <option value="other">Outro</option>
+              </select>
+            </div>
+            
+            <div class="form-group" id="otherEquipmentGroup" style="display: none;">
+              <label for="otherEquipment">Especifique o equipamento*</label>
+              <input type="text" id="otherEquipment" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label for="requestReason">Motivo da Solicitação*</label>
+              <textarea id="requestReason" class="form-control" rows="4" required placeholder="Descreva por que você precisa deste equipamento"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="duration">Tempo Previsto de Uso*</label>
+              <select id="duration" class="form-control" required>
+                <option value="">Selecione o período</option>
+                <option value="temporary">Uso temporário (até 3 meses)</option>
+                <option value="long_term">Uso de longo prazo (3-12 meses)</option>
+                <option value="permanent">Uso permanente</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="patientName">Nome do Paciente*</label>
+              <input type="text" id="patientName" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="patientAge">Idade do Paciente*</label>
+              <input type="number" id="patientAge" class="form-control" min="0" max="120" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="patientCondition">Condição do Paciente*</label>
+              <textarea id="patientCondition" class="form-control" rows="3" required placeholder="Descreva a condição médica que justifica a solicitação"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="requesterName">Seu Nome*</label>
+              <input type="text" id="requesterName" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="requesterRelation">Relação com o Paciente*</label>
+              <select id="requesterRelation" class="form-control" required>
+                <option value="">Selecione sua relação</option>
+                <option value="self">Eu mesmo(a)</option>
+                <option value="family">Familiar</option>
+                <option value="caregiver">Cuidador</option>
+                <option value="professional">Profissional de saúde</option>
+                <option value="other">Outro</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="requesterEmail">Seu E-mail*</label>
+              <input type="email" id="requesterEmail" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="requesterPhone">Seu Telefone*</label>
+              <input type="tel" id="requesterPhone" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="deliveryAddress">Endereço para Entrega*</label>
+              <textarea id="deliveryAddress" class="form-control" rows="3" required placeholder="Rua, número, bairro, cidade"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <div class="form-check">
+                <input type="checkbox" id="agreeTermsRequest" class="form-check-input" required>
+                <label for="agreeTermsRequest" class="form-check-label">Declaro que as informações fornecidas são verdadeiras*</label>
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary">Enviar Solicitação</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Como Funciona</h2>
+          <p>Entenda o processo de solicitação e entrega dos equipamentos</p>
+        </div>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3>Preencha o Formulário</h3>
+            <p>Complete com todas as informações necessárias sobre o equipamento e o paciente.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3>Análise da Solicitação</h3>
+            <p>Nossa equipe avalia a disponibilidade e a adequação do equipamento solicitado.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3>Confirmação</h3>
+            <p>Entramos em contato para confirmar os detalhes e agendar a entrega.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3>Entrega do Equipamento</h3>
+            <p>Realizamos a entrega no endereço indicado e fornecemos orientações de uso.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <img class="footer-logo" src="06 - farmacia solidaria/img/UniHelp Logo.png" alt="UniHelp Logo" />
+    <div class="footer-container">
+      <div class="footer-column footer-brand">
+        <h2>Seu bem-estar é a<br><span class="highlight">nossa prioridade.</span></h2>
+        <p>Tem alguma dúvida ou precisa de ajuda? Envie uma mensagem e retornaremos o mais breve possível.</p>
+        <div class="footer-newsletter">
+          <input type="email" placeholder="Digite seu E-mail" />
+          <button><span>Enviar</span></button>
+        </div>
+        <p class="footer-copy">© 2025 UniHelp — Todos os direitos reservados.<br>
+          Desenvolvido por Kaliandrik, Aderlangio, Mateus e Guilherme.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Suporte</h3>
+        <ul>
+          <li><a href="#">Agendar Consulta</a></li>
+          <li><a href="#">Dúvidas Frequentes</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Informações úteis</h3>
+        <ul>
+          <li><a href="#">Sobre a Empresa</a></li>
+          <li><a href="#">Equipe Profissional</a></li>
+          <li><a href="#">Serviços Oferecidos</a></li>
+          <li><a href="#">Convênios Atendidos</a></li>
+          <li><a href="#">Blog / Notícias</a></li>
+        </ul>
+      </div>
+
+
+      <div class="social">
+        <h3>Siga-nos</h3>
+        <ul>
+          <li><i class="fab fa-facebook-square"></i> <span>Facebook</span></li>
+          <li><i class="fab fa-instagram"></i> <span>Instagram</span></li>
+          <li><i class="fab fa-x-twitter"></i> <span>X</span></li>
+          <li><i class="fab fa-linkedin"></i> <span>LinkedIn</span></li>
+          <li><i class="fab fa-youtube"></i> <span>YouTube</span></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Menu Mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        nav.setAttribute('data-visible', !isExpanded);
+      });
+    }
+
+    // Atualizar data e hora
+    function updateDateTime() {
+      const now = new Date();
+      const horaDataEl = document.getElementById('horaData');
+      
+      if (horaDataEl) {
+        // Formatar hora (HH:MM)
+        const horas = String(now.getHours()).padStart(2, '0');
+        const minutos = String(now.getMinutes()).padStart(2, '0');
+        
+        // Nomes dos dias da semana e meses por extenso
+        const diasSemana = [
+          'domingo', 'segunda-feira', 'terça-feira', 
+          'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'
+        ];
+        
+        const meses = [
+          'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+          'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+        ];
+        
+        // Obter componentes da data
+        const diaSemana = diasSemana[now.getDay()];
+        const dia = now.getDate();
+        const mes = meses[now.getMonth()];
+        const ano = now.getFullYear();
+        
+        // Formatar a exibição
+        horaDataEl.textContent = `${horas}:${minutos} | ${diaSemana}, ${dia} de ${mes} de ${ano}`;
+      }
+    }
+    
+    // Atualizar imediatamente e depois a cada minuto
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+
+    // Restante do seu código JavaScript permanece igual...
+    // [Manter o restante do código original]
+  });
+</script>
+
+</body>
+</html>

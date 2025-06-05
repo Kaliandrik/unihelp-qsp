@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UniHelp - Plataforma de agendamento de consultas médicas especializadas. Conectamos pacientes a profissionais de saúde.">
+  <meta name="keywords" content="consulta médica, agendamento online, saúde, fisioterapia, psicólogo">
+  <meta name="author" content="UniHelp">
+  <meta property="og:title" content="UniHelp - Agendamento de Consultas">
+  <meta property="og:type" content="website">
+  
+  <title>Agendar consulta</title>
+  
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="05 - telaconsultas/telaconsultas.css">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Skip Navigation Link (Acessibilidade) -->
+  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="telaconsulta.html">
+            <img src="05 - telaconsultas/img/UniHelp Logo.png" alt="UniHelp - Logo" width="150" height="50" class="logo__img">
+          </a>
+        </div>
+        
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="hamburger"></span>
+        </button>
+        
+        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="painel_user.html" class="nav__link" aria-current="page">Início</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">Serviços</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">Sobre Nós</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
+            <span id="horaData">00:00 | 00/00/0000</span>
+            <li class="nav__item">
+              <a href="#" class="user-profile" aria-label="Perfil do usuário">
+                <img src="05 - telaconsultas/img/seu perfil.jpg" alt="Foto do perfil" width="40" height="40">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" role="main">
+    <!-- HERO SECTION -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero__content">
+          <h1 id="hero-heading" class="hero__title">ENCONTRE APOIO <br> APÓS UM ACIDENTE</h1>
+          <p class="hero__text">Conecte-se com profissionais, recursos e uma comunidade pronta para ajudar na sua recuperação.</p>
+          <a href="#appointment" class="btn btn--primary">Agendar Consulta</a>
+        </div>
+        <div class="hero__image">
+          <img src="05 - telaconsultas/img/foto1_idosa.avif" alt="Pessoa em cadeira de rodas com profissional de saúde" width="600" height="400">
+        </div>
+      </div>
+    </section>
+
+    <!-- APPOINTMENT SECTION -->
+    <section id="appointment" class="appointment-section" aria-labelledby="appointment-heading">
+      <div class="container">
+        <h2 id="appointment-heading" class="section-title">Consulta Médica</h2>
+        
+        <div class="appointment-grid">
+          <!-- Specialties Column -->
+          <div class="appointment-column">
+            <h3 class="column-title">Especialidades Disponíveis</h3>
+            
+            <div class="form-group">
+              <label for="specialty" class="sr-only">Selecione uma especialidade médica</label>
+              <select id="specialty" name="specialty" class="select-custom" aria-required="true">
+                <option value="" disabled selected>Selecione uma especialidade</option>
+                <option value="general">👨‍⚕️ Clínico Geral</option>
+                <option value="psychologist">🧠 Psicólogo</option>
+                <option value="physiotherapist">🦴 Fisioterapeuta</option>
+                <option value="neurologist">🧬 Neurologista</option>
+                <option value="orthopedist">🦵 Ortopedista</option>
+              </select>
+              <span class="error-message" aria-live="polite"></span>
+            </div>
+            
+            <div class="appointment-history">
+              <h4 class="history-title">Histórico de Consultas</h4>
+              <ul class="history-list" role="list">
+                <li class="history-item">
+                  <span class="history-date">12/03/2025</span>
+                  <span class="history-specialty">Ortopedista</span>
+                  <span class="history-type history-type--in-person">Presencial</span>
+                </li>
+                <li class="history-item">
+                  <span class="history-date">04/02/2025</span>
+                  <span class="history-specialty">Psicólogo</span>
+                  <span class="history-type history-type--online">Online</span>
+                </li>
+                <li class="history-item">
+                  <span class="history-date">09/04/2025</span>
+                  <span class="history-specialty">Clínico Geral</span>
+                  <span class="history-type history-type--in-person">Presencial</span>
+                </li>
+              </ul>
+              <button type="button" class="btn btn--secondary">Ver mais</button>
+            </div>
+          </div>
+          
+          <!-- Form Column -->
+          <div class="appointment-column">
+            <h3 class="column-title">Agendar Consulta</h3>
+            
+            <form id="appointment-form" class="appointment-form" novalidate>
+              <div class="form-group">
+                <label for="full-name">Nome Completo</label>
+                <input type="text" id="full-name" name="full-name" required placeholder="Ex: João Pedro da Silva">
+                <span class="error-message" aria-live="polite"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="appointment-date">Data</label>
+                <input type="date" id="appointment-date" name="appointment-date" required>
+                <span class="error-message" aria-live="polite"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="appointment-time">Horários disponíveis</label>
+                <select id="appointment-time" name="appointment-time" required>
+                  <option value="" disabled selected>Selecione o horário</option>
+                  <option value="09:00">09:00 - AM</option>
+                  <option value="09:30">09:30 - AM</option>
+                  <option value="10:00">10:00 - AM</option>
+                  <option value="10:30">10:30 - AM</option>
+                  <option value="14:00">14:00 - PM</option>
+                  <option value="14:30">14:30 - PM</option>
+                  <option value="15:00">15:00 - PM</option>
+                </select>
+                <span class="error-message" aria-live="polite"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="appointment-type">Tipo de consulta</label>
+                <select id="appointment-type" name="appointment-type" required>
+                  <option value="online">Online</option>
+                  <option value="in-person">Presencial</option>
+                </select>
+                <span class="error-message" aria-live="polite"></span>
+              </div>
+              
+              <div class="form-actions">
+                <button type="submit" class="btn btn--primary">Agendar</button>
+                <button type="reset" class="btn btn--outline">Limpar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <img class="footer-logo" src="05 - telaconsultas/img/UniHelp Logo.png" alt="UniHelp Logo" />
+    <div class="footer-container">
+      <div class="footer-column footer-brand">
+        <h2>Seu bem-estar é a<br><span class="highlight">nossa prioridade.</span></h2>
+        <p>Tem alguma dúvida ou precisa de ajuda? Envie uma mensagem e retornaremos o mais breve possível.</p>
+        <div class="footer-newsletter">
+          <input type="email" placeholder="Digite seu E-mail" />
+          <button><span>Enviar</span></button>
+        </div>
+        <p class="footer-copy">© 2025 UniHelp — Todos os direitos reservados.<br>
+          Desenvolvido por Kaliandrik, Aderlangio, Mateus e Guilherme.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Suporte</h3>
+        <ul>
+          <li><a href="#">Agendar Consulta</a></li>
+          <li><a href="#">Dúvidas Frequentes</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Informações úteis</h3>
+        <ul>
+          <li><a href="#">Sobre a Empresa</a></li>
+          <li><a href="#">Equipe Profissional</a></li>
+          <li><a href="#">Serviços Oferecidos</a></li>
+          <li><a href="#">Convênios Atendidos</a></li>
+          <li><a href="#">Blog / Notícias</a></li>
+        </ul>
+      </div>
+
+      <div class="social">
+        <h3>Siga-nos</h3>
+        <ul>
+          <li><i class="fab fa-facebook-square"></i> <span>Facebook</span></li>
+          <li><i class="fab fa-instagram"></i> <span>Instagram</span></li>
+          <li><i class="fab fa-x-twitter"></i> <span>X</span></li>
+          <li><i class="fab fa-linkedin"></i> <span>LinkedIn</span></li>
+          <li><i class="fab fa-youtube"></i> <span>YouTube</span></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Menu Mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        nav.setAttribute('data-visible', !isExpanded);
+      });
+    }
+
+    // Atualizar data e hora
+    function updateDateTime() {
+      const now = new Date();
+      const horaDataEl = document.getElementById('horaData');
+      
+      if (horaDataEl) {
+        const horas = String(now.getHours()).padStart(2, '0');
+        const minutos = String(now.getMinutes()).padStart(2, '0');
+        
+        const diasSemana = [
+          'domingo', 'segunda-feira', 'terça-feira', 
+          'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'
+        ];
+        
+        const meses = [
+          'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+          'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+        ];
+        
+        const diaSemana = diasSemana[now.getDay()];
+        const dia = now.getDate();
+        const mes = meses[now.getMonth()];
+        const ano = now.getFullYear();
+        
+        horaDataEl.textContent = `${horas}:${minutos} | ${diaSemana}, ${dia} de ${mes} de ${ano}`;
+      }
+    }
+    
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+
+    // Formulário de agendamento - Versão final corrigida
+    const appointmentForm = document.getElementById('appointment-form');
+    if (appointmentForm) {
+      appointmentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Resetar erros anteriores
+        const errorMessages = document.querySelectorAll('.error-message');
+        errorMessages.forEach(msg => msg.textContent = '');
+        const errorInputs = document.querySelectorAll('.error');
+        errorInputs.forEach(input => input.classList.remove('error'));
+        
+        let formIsValid = true;
+        
+        // Validação do nome
+        const nomeInput = document.getElementById('full-name');
+        const nome = nomeInput.value.trim();
+        if (!nome) {
+          nomeInput.classList.add('error');
+          nomeInput.nextElementSibling.textContent = 'Por favor, preencha seu nome';
+          formIsValid = false;
+        }
+        
+        // Validação da especialidade
+        const especialidadeEl = document.getElementById('specialty');
+        if (!especialidadeEl.value) {
+          especialidadeEl.classList.add('error');
+          especialidadeEl.nextElementSibling.textContent = 'Por favor, selecione uma especialidade';
+          formIsValid = false;
+        }
+        
+        // Validação da data
+        const dataInput = document.getElementById('appointment-date');
+        const data = dataInput.value;
+        if (!data) {
+          dataInput.classList.add('error');
+          dataInput.nextElementSibling.textContent = 'Por favor, selecione uma data';
+          formIsValid = false;
+        }
+        
+        // Validação do horário
+        const horaInput = document.getElementById('appointment-time');
+        const hora = horaInput.value;
+        if (!hora) {
+          horaInput.classList.add('error');
+          horaInput.nextElementSibling.textContent = 'Por favor, selecione um horário';
+          formIsValid = false;
+        }
+        
+        // Validação do tipo de consulta
+        const tipoInput = document.getElementById('appointment-type');
+        const tipo = tipoInput.value;
+        if (!tipo) {
+          tipoInput.classList.add('error');
+          tipoInput.nextElementSibling.textContent = 'Por favor, selecione um tipo de consulta';
+          formIsValid = false;
+        }
+        
+        // Só redireciona se todos os campos estiverem válidos
+        if (formIsValid) {
+          try {
+            const especialidadeText = especialidadeEl.options[especialidadeEl.selectedIndex].text;
+            const [ano, mes, dia] = data.split('-');
+            const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+                          'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+            
+            const dataFormatada = `${dia} de ${meses[parseInt(mes)-1]} de ${ano}`;
+            
+            window.location.href = `confirmacaodeconsulta.html?nome=${encodeURIComponent(nome)}&especialidade=${encodeURIComponent(especialidadeText)}&data=${encodeURIComponent(dataFormatada)}&hora=${encodeURIComponent(hora)}&tipo=${encodeURIComponent(tipo)}`;
+          } catch (error) {
+            console.error('Erro no redirecionamento:', error);
+            alert('Ocorreu um erro ao agendar sua consulta. Por favor, tente novamente.');
+          }
+        } else {
+          // Rolagem suave para o primeiro campo inválido
+          const firstInvalid = document.querySelector('.error');
+          if (firstInvalid) {
+            firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      });
+    }
+  });
+</script>
+</body>
+</html>

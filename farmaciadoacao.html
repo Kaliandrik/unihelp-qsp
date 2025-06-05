@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UniHelp - Plataforma de agendamento de consultas médicas especializadas. Conectamos pacientes a profissionais de saúde.">
+  <meta name="keywords" content="consulta médica, agendamento online, saúde, fisioterapia, psicólogo">
+  <meta name="author" content="UniHelp">
+  <meta property="og:title" content="UniHelp - Agendamento de Consultas">
+  <meta property="og:type" content="website">
+ 
+  <title>Farmacia doação</title>
+ 
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+ 
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="06 - farmacia solidaria/farmaciadoacao.css">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Skip Navigation Link (Acessibilidade) -->
+  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="/">
+            <img src="06 - farmacia solidaria/img/UniHelp Logo.png" alt="UniHelp - Logo" width="150" height="50" class="logo__img">
+          </a>
+        </div>
+       
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="hamburger"></span>
+        </button>
+       
+        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#" class="nav__link" aria-current="page">Início</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">Serviços</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">Sobre Nós</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
+            <span id="horaData">00:00 | 00/00/0000</span>
+            <li class="nav__item">
+              <a href="#" class="user-profile" aria-label="Perfil do usuário">
+                <img src="06 - farmacia solidaria/img/seu perfil.jpg" alt="Foto do perfil" width="40" height="40">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <style>
+   
+    /* Hero Section */
+    .pharmacy-hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: var(--color-white);
+      padding: var(--space-xxl) 0;
+      text-align: center;
+    }
+   
+    .pharmacy-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: var(--space-md);
+    }
+   
+    .pharmacy-hero p {
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto var(--space-xl);
+      opacity: 0.9;
+    }
+   
+    /* Donation Sections */
+    .donation-section {
+      padding: var(--space-xxl) 0;
+    }
+   
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+   
+    .section-title h2 {
+      font-size: 2rem;
+      color: var(--color-primary);
+    }
+   
+    .donation-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-xl);
+    }
+   
+    .donation-card {
+      background-color: var(--color-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+   
+    .card-image {
+      height: 200px;
+      overflow: hidden;
+    }
+   
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+   
+    .card-content {
+      padding: var(--space-lg);
+    }
+   
+    .card-content h3 {
+      color: var(--color-primary);
+      margin-bottom: var(--space-sm);
+    }
+   
+    .card-content p {
+      color: var(--color-gray);
+    }
+   
+    /* Donation Form */
+    .donation-form {
+      background-color: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-md);
+      max-width: 800px;
+      margin: var(--space-xxl) auto;
+    }
+   
+    .form-group {
+      margin-bottom: var(--space-lg);
+    }
+   
+    .form-group label {
+      display: block;
+      margin-bottom: var(--space-sm);
+      font-weight: 500;
+    }
+   
+    .form-control {
+      width: 100%;
+      padding: var(--space-sm);
+      border: 1px solid #ddd;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 1rem;
+    }
+   
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+   
+    .form-actions {
+      text-align: center;
+      margin-top: var(--space-xl);
+    }
+   
+    /* Utility Classes */
+    .btn {
+      display: inline-block;
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+   
+    .btn--primary {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+   
+    .btn--primary:hover {
+      background-color: var(--color-primary-dark);
+    }
+  </style>
+</head>
+
+
+  </header>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+    <!--  ESCREVA SEU CONTEUDO LOGO ABAIXO    -->
+ 
+  <!-- Hero Section -->
+  <section class="pharmacy-hero">
+    <div class="container">
+      <h1>Farmácia Solidária</h1>
+      <p>Doe equipamentos de mobilidade e medicamentos para ajudar quem mais precisa. Sua contribuição pode transformar vidas.</p>
+      <a href="#donate-form" class="btn btn--primary" id="scrollToForm">Doar Agora</a>
+    </div>
+  </section>
+
+
+  <!-- Equipment Donation Section -->
+  <section class="donation-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Equipamentos de Mobilidade</h2>
+      </div>
+      <div class="donation-cards">
+        <div class="donation-card">
+          <div class="card-image">
+            <img src="06 - farmacia solidaria/img/cadeiradrodas.jpg" alt="Cadeira de rodas">
+          </div>
+          <div class="card-content">
+            <h3>Cadeiras de Rodas</h3>
+            <p>Aceitamos doações de cadeiras de rodas em bom estado de conservação. Sua doação pode proporcionar mobilidade a quem precisa.</p>
+          </div>
+        </div>
+       
+        <div class="donation-card">
+          <div class="card-image">
+            <img src="06 - farmacia solidaria/img/muletas.jpg" alt="Muletas">
+          </div>
+          <div class="card-content">
+            <h3>Muletas e Andadores</h3>
+            <p>Doações de muletas, andadores e bengalas ajudam pessoas com dificuldades de locomoção temporárias ou permanentes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Medicine Donation Section -->
+  <section class="donation-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Medicamentos e Reabilitação</h2>
+      </div>
+      <div class="donation-cards">
+        <div class="donation-card">
+          <div class="card-image">
+            <img src="06 - farmacia solidaria/img/remedios.jpg" alt="Medicamentos">
+          </div>
+          <div class="card-content">
+            <h3>Medicamentos Básicos</h3>
+            <p>Aceitamos doações de analgésicos, anti-inflamatórios, antitérmicos e outros medicamentos de uso comum com validade longa.</p>
+          </div>
+        </div>
+       
+        <div class="donation-card">
+          <div class="card-image">
+            <img src="06 - farmacia solidaria/img/reabilitacao.jpg" alt="Suplementos">
+          </div>
+          <div class="card-content">
+            <h3>Equipamentos de Reabilitação</h3>
+            <p>Equipamentos de reabilitação de alta performance,
+                para atender às necessidades de fisioterapeutas e
+                pacientes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Donation Form -->
+  <section id="donate-form" class="donation-section">
+    <div class="container">
+      <div class="donation-form">
+        <h2 class="section-title">Formulário de Doação</h2>
+        <form id="donationForm">
+          <div class="form-group">
+            <label for="donationType">Tipo de Doação*</label>
+            <select id="donationType" class="form-control" required>
+              <option value="">Selecione o tipo de doação</option>
+              <option value="wheelchair">Cadeira de rodas</option>
+              <option value="crutches">Muletas/Andadores</option>
+              <option value="basic_medicine">Medicamento básico</option>
+              <option value="supplements">Equipamentos de reabilitação</option>
+              <option value="other">Outro</option>
+            </select>
+          </div>
+         
+          <div class="form-group" id="otherItemGroup" style="display: none;">
+            <label for="otherItem">Especifique o item*</label>
+            <input type="text" id="otherItem" class="form-control">
+          </div>
+         
+          <div class="form-group">
+            <label for="itemDescription">Descrição do Item*</label>
+            <input type="text" id="itemDescription" class="form-control" placeholder="Ex: Cadeira de rodas modelo X, Paracetamol 500mg" required>
+          </div>
+         
+          <div class="form-group">
+            <label for="itemCondition">Estado do Item*</label>
+            <select id="itemCondition" class="form-control" required>
+              <option value="">Selecione o estado</option>
+              <option value="new">Novo</option>
+              <option value="good">Usado - Bom estado</option>
+              <option value="regular">Usado - Estado regular</option>
+            </select>
+          </div>
+         
+          <div class="form-group" id="expiryDateGroup">
+            <label for="expiryDate">Validade (para medicamentos)</label>
+            <input type="date" id="expiryDate" class="form-control">
+          </div>
+         
+          <div class="form-group">
+            <label for="donorName">Seu Nome*</label>
+            <input type="text" id="donorName" class="form-control" required>
+          </div>
+         
+          <div class="form-group">
+            <label for="donorEmail">Seu E-mail*</label>
+            <input type="email" id="donorEmail" class="form-control" required>
+          </div>
+         
+          <div class="form-group">
+            <label for="donorPhone">Seu Telefone*</label>
+            <input type="tel" id="donorPhone" class="form-control" required>
+          </div>
+         
+          <div class="form-group">
+            <label for="donorAddress">Endereço para Coleta (opcional)</label>
+            <textarea id="donorAddress" class="form-control" rows="3" placeholder="Rua, número, bairro, cidade"></textarea>
+          </div>
+         
+          <div class="form-group">
+            <div class="form-check">
+              <input type="checkbox" id="agreeTerms" class="form-check-input" required>
+              <label for="agreeTerms" class="form-check-label">Concordo com os Termos de Doação*</label>
+            </div>
+          </div>
+         
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary">Enviar Doação</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <img class="footer-logo" src="06 - farmacia solidaria/img/UniHelp Logo.png" alt="UniHelp Logo" />
+    <div class="footer-container">
+      <div class="footer-column footer-brand">
+        <h2>Seu bem-estar é a<br><span class="highlight">nossa prioridade.</span></h2>
+        <p>Tem alguma dúvida ou precisa de ajuda? Envie uma mensagem e retornaremos o mais breve possível.</p>
+        <div class="footer-newsletter">
+          <input type="email" placeholder="Digite seu E-mail" />
+          <button><span>Enviar</span></button>
+        </div>
+        <p class="footer-copy">© 2025 UniHelp — Todos os direitos reservados.<br>
+          Desenvolvido por Kaliandrik, Aderlangio, Mateus e Guilherme.
+        </p>
+      </div>
+
+
+      <div class="footer-column">
+        <h3>Suporte</h3>
+        <ul>
+          <li><a href="#">Agendar Consulta</a></li>
+          <li><a href="#">Dúvidas Frequentes</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+     
+      <div class="footer-column">
+        <h3>Informações úteis</h3>
+        <ul>
+          <li><a href="#">Sobre a Empresa</a></li>
+          <li><a href="#">Equipe Profissional</a></li>
+          <li><a href="#">Serviços Oferecidos</a></li>
+          <li><a href="#">Convênios Atendidos</a></li>
+          <li><a href="#">Blog / Notícias</a></li>
+        </ul>
+      </div>
+
+
+
+
+      <div class="social">
+        <h3>Siga-nos</h3>
+        <ul>
+          <li><i class="fab fa-facebook-square"></i> <span>Facebook</span></li>
+          <li><i class="fab fa-instagram"></i> <span>Instagram</span></li>
+          <li><i class="fab fa-x-twitter"></i> <span>X</span></li>
+          <li><i class="fab fa-linkedin"></i> <span>LinkedIn</span></li>
+          <li><i class="fab fa-youtube"></i> <span>YouTube</span></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Menu Mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+   
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        nav.setAttribute('data-visible', !isExpanded);
+      });
+    }
+
+
+    // Atualizar data e hora
+    function updateDateTime() {
+      const now = new Date();
+      const horaDataEl = document.getElementById('horaData');
+     
+      if (horaDataEl) {
+        // Formatar hora (HH:MM)
+        const horas = String(now.getHours()).padStart(2, '0');
+        const minutos = String(now.getMinutes()).padStart(2, '0');
+       
+        // Nomes dos dias da semana e meses por extenso
+        const diasSemana = [
+          'domingo', 'segunda-feira', 'terça-feira',
+          'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'
+        ];
+       
+        const meses = [
+          'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+          'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+        ];
+       
+        // Obter componentes da data
+        const diaSemana = diasSemana[now.getDay()];
+        const dia = now.getDate();
+        const mes = meses[now.getMonth()];
+        const ano = now.getFullYear();
+       
+        // Formatar a exibição
+        horaDataEl.textContent = `${horas}:${minutos} | ${diaSemana}, ${dia} de ${mes} de ${ano}`;
+      }
+    }
+   
+    // Atualizar imediatamente e depois a cada minuto
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+
+
+    // Restante do seu código JavaScript permanece igual...
+    // [Manter o restante do código original]
+  });
+</script>
+
+
+
+
+ <!-- JavaScript Inline -->
+  <script>
+    // Scroll suave para o formulário
+    document.getElementById('scrollToForm').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('donate-form').scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+
+
+    // Controle de campos condicionais
+    const donationTypeSelect = document.getElementById('donationType');
+    const otherItemGroup = document.getElementById('otherItemGroup');
+    const expiryDateGroup = document.getElementById('expiryDateGroup');
+
+
+    donationTypeSelect.addEventListener('change', function() {
+      // Mostrar/ocultar campo "Outro item"
+      if (this.value === 'other') {
+        otherItemGroup.style.display = 'block';
+        document.getElementById('otherItem').setAttribute('required', '');
+      } else {
+        otherItemGroup.style.display = 'none';
+        document.getElementById('otherItem').removeAttribute('required');
+      }
+
+
+      // Mostrar/ocultar campo de validade para medicamentos
+      const isMedicine = this.value.includes('medicine') || this.value === 'supplements';
+      expiryDateGroup.style.display = isMedicine ? 'block' : 'none';
+    });
+
+
+    // Validação do formulário
+    document.getElementById('donationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+     
+      // Verificar campos obrigatórios
+      const requiredFields = this.querySelectorAll('[required]');
+      let isValid = true;
+
+
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          field.classList.add('is-invalid');
+          isValid = false;
+        } else {
+          field.classList.remove('is-invalid');
+        }
+      });
+
+
+      // Verificar se o checkbox foi marcado
+      if (!document.getElementById('agreeTerms').checked) {
+        document.getElementById('agreeTerms').classList.add('is-invalid');
+        isValid = false;
+      } else {
+        document.getElementById('agreeTerms').classList.remove('is-invalid');
+      }
+
+
+      if (!isValid) {
+        alert('Por favor, preencha todos os campos obrigatórios marcados com *.');
+        return;
+      }
+
+
+      // Simular envio bem-sucedido
+      alert('Obrigado por sua doação! Entraremos em contato em breve para combinar a coleta.');
+      this.reset();
+     
+      // Em uma aplicação real, você enviaria os dados para o servidor aqui
+      // Exemplo:
+      // const formData = new FormData(this);
+      // fetch('/api/doacoes', { method: 'POST', body: formData })
+      //   .then(response => response.json())
+      //   .then(data => console.log(data))
+      //   .catch(error => console.error(error));
+    });
+
+
+    // Estilo para campos inválidos
+    const style = document.createElement('style');
+    style.textContent = `
+      .is-invalid {
+        border-color: #dc3545 !important;
+      }
+      .form-check-input.is-invalid {
+        outline: 2px solid #dc3545;
+      }
+    `;
+    document.head.appendChild(style);
+
+
+  </script>
+
+
+  <script>
+ document.addEventListener('DOMContentLoaded', function() {
+  // Efeito de hover dinâmico (pode ser feito apenas com CSS também)
+  const cards = document.querySelectorAll('.card-image');
+ 
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.querySelector('img').style.transform = 'scale(1.05)';
+    });
+   
+    card.addEventListener('mouseleave', function() {
+      this.querySelector('img').style.transform = 'scale(1)';
+    });
+  });
+});
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bubbles">
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+</div>
+
+
+</body>
+</html>
+

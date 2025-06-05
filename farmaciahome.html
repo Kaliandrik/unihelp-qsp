@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UniHelp - Plataforma de agendamento de consultas médicas especializadas. Conectamos pacientes a profissionais de saúde.">
+  <meta name="keywords" content="consulta médica, agendamento online, saúde, fisioterapia, psicólogo">
+  <meta name="author" content="UniHelp">
+  <meta property="og:title" content="UniHelp - Agendamento de Consultas">
+  <meta property="og:type" content="website">
+  
+  <title>Farmacia Home</title>
+  
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="06 - farmacia solidaria/farmaciahome.css">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="/">
+            <img src="06 - farmacia solidaria/img/UniHelp Logo.png" alt="UniHelp - Logo" width="150" height="50" class="logo__img">
+          </a>
+        </div>
+        
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="hamburger"></span>
+        </button>
+        
+        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#" class="nav__link" aria-current="page">Início</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">Serviços</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">Sobre Nós</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
+            <span id="horaData">00:00 | 00/00/0000</span>
+            <li class="nav__item">
+              <a href="#" class="user-profile" aria-label="Perfil do usuário">
+                <img src="06 - farmacia solidaria/img/seu perfil.jpg" alt="Foto do perfil" width="40" height="40">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+ 
+  
+
+    <!--  ESCREVA SEU CONTEUDO LOGO ABAIXO    --> 
+   <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <h1>Inclusão e Acessibilidade para Todos</h1>
+                <p class="subtitle">Conectamos doadores de equipamentos de mobilidade a quem realmente precisa</p>
+                
+                <div class="hero-buttons">
+                    <a href="farmaciadoacao.html" class="btn btn-primary">
+                        <i class="fas fa-hand-holding-heart"></i> Doar Equipamento
+                    </a>
+                    <a href="solicitacao.html" class="btn btn-secondary">
+                        <i class="fas fa-wheelchair"></i> Solicitar Equipamento
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-wheelchair-move"></i>
+                    </div>
+                    <div class="stat-number" data-count="1243">2342</div>
+                    <div class="stat-label">Cadeiras de Rodas Doadas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="stat-number" data-count="876">87216</div>
+                    <div class="stat-label">Pessoas Beneficiadas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="stat-number" data-count="156">5</div>
+                    <div class="stat-label">Instituições Parceiras</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="stat-number" data-count="42">23</div>
+                    <div class="stat-label">Cidades Atendidas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Options Section -->
+    <section class="main-options">
+        <div class="container">
+            <h2 class="section-title">Como Podemos Ajudar?</h2>
+            <p class="section-subtitle">Escolha abaixo o que deseja fazer</p>
+            
+            <div class="options-grid">
+                <!-- Doar Equipamento Card -->
+                <a href="farmaciadoacao.html" class="option-card donate-card">
+                    <div class="card-icon">
+                        <i class="fas fa-hand-holding-medical"></i>
+                    </div>
+                    <h3>Doar Equipamento</h3>
+                    <p>Tem equipamentos de mobilidade que não usa mais? Doe para quem precisa!</p>
+                    <ul class="equipment-list">
+                        <li><i class="fas fa-check-circle"></i> Cadeiras de rodas</li>
+                        <li><i class="fas fa-check-circle"></i> Muletas</li>
+                        <li><i class="fas fa-check-circle"></i> Andadores</li>
+                        <li><i class="fas fa-check-circle"></i> Cadeiras de banho</li>
+                    </ul>
+                    <div class="card-button">
+                        <span>Quero Doar</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <!-- Solicitar Equipamento Card -->
+                <a href="solicitacao.html" class="option-card request-card">
+                    <div class="card-icon">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <h3>Solicitar Equipamento</h3>
+                    <p>Precisa de equipamentos de acessibilidade? Podemos te ajudar!</p>
+                    <ul class="equipment-list">
+                        <li><i class="fas fa-check-circle"></i> Para uso temporário</li>
+                        <li><i class="fas fa-check-circle"></i> Para uso permanente</li>
+                        <li><i class="fas fa-check-circle"></i> Pessoas físicas</li>
+                        <li><i class="fas fa-check-circle"></i> Instituições</li>
+                    </ul>
+                    <div class="card-button">
+                        <span>Solicitar Agora</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Types Section -->
+    <section class="equipment-types">
+        <div class="container">
+            <h2 class="section-title">Tipos de Equipamentos</h2>
+            <p class="section-subtitle">Que aceitamos e disponibilizamos</p>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                      <img src="https://images.tcdn.com.br/img/img_prod/1125779/cadeira_de_rodas_aco_dobravel_ate_120_kg_d400_dellamed_9_1_2e6c038138b33b4152180bd89903b1d7.jpg" alt="Cadeira de rodas">
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Cadeiras de Rodas</h3>
+                        <p>Adulto, infantil, motorizada e esportiva</p>
+                        <div class="equipment-tags">
+                            <span>Doação</span>
+                            <span>Empréstimo</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="https://kmina.com/cdn/shop/files/3_3aa8bf50-4065-476b-9967-eb547dd1b8f3_700x700.png?v=1683704724" alt="Muletas">
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Muletas e Andadores</h3>
+                        <p>Axilares, canadenses e andadores</p>
+                        <div class="equipment-tags">
+                            <span>Doação</span>
+                            <span>Temporário</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="https://cdn.awsli.com.br/2144/2144808/produto/131057212/4039f2d1dd.jpg" alt="Cadeira de banho">
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Cadeiras de Banho</h3>
+                        <p>Com e sem rodas, ajustáveis</p>
+                        <div class="equipment-tags">
+                            <span>Doação</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="https://lirp.cdn-website.com/ff5f83cf/dms3rep/multi/opt/tipos+de+protese+de+perna-f074be76-640w.png" alt="Órteses e próteses">
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Órteses e Próteses</h3>
+                        <p>Membros superiores e inferiores</p>
+                        <div class="equipment-tags">
+                            <span>Consulta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Depoimentos</h2>
+            <p class="section-subtitle">Históricos reais de transformação</p>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Após meu acidente, consegui uma cadeira de rodas através da AcessiTech que me permitiu voltar a trabalhar e ter independência. Foi um divisor de águas na minha vida."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://i.pinimg.com/474x/84/ff/5d/84ff5d4969b1b130975ee331269614c6.jpg" alt="Carlos Silva">
+                            </div>
+                            <div class="author-info">
+                                <h4>Carlos Silva</h4>
+                                <span>Recém-acidentado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Doamos a cadeira de rodas da minha avó que faleceu e saber que está ajudando outra pessoa nos conforta. O processo foi muito simples e humano."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://i.pinimg.com/736x/4e/7b/75/4e7b7540dd1b95e727692dc32f59eeda.jpg" alt="Ana Oliveira">
+                            </div>
+                            <div class="author-info">
+                                <h4>Ana Oliveira</h4>
+                                <span>Doadora</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <h2 class="section-title">Nossos Parceiros</h2>
+            <p class="section-subtitle">Instituições que apoiam nossa causa</p>
+            
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=Hospital" alt="Hospital Parceiro">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=ONG" alt="ONG Parceira">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=Prefeitura" alt="Prefeitura">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=Empresa" alt="Empresa Parceira">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=Clinica" alt="Clínica Parceira">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto para fazer a diferença?</h2>
+                <p>Seja um doador ou solicite um equipamento de acessibilidade</p>
+                <div class="cta-buttons">
+                    <a href="farmaciadoacao.html" class="btn btn-light">
+                        <i class="fas fa-gift"></i> Quero Doar
+                    </a>
+                    <a href="solicitacao.html" class="btn btn-dark">
+                        <i class="fas fa-hands-helping"></i> Preciso de Ajuda
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <img class="footer-logo" src="img/UniHelp Logo.png" alt="UniHelp Logo" />
+    <div class="footer-container">
+      <div class="footer-column footer-brand">
+        <h2>Seu bem-estar é a<br><span class="highlight">nossa prioridade.</span></h2>
+        <p>Tem alguma dúvida ou precisa de ajuda? Envie uma mensagem e retornaremos o mais breve possível.</p>
+        <div class="footer-newsletter">
+          <input type="email" placeholder="Digite seu E-mail" />
+          <button><span>Enviar</span></button>
+        </div>
+        <p class="footer-copy">© 2025 UniHelp — Todos os direitos reservados.<br>
+          Desenvolvido por Kaliandrik, Aderlangio, Mateus e Guilherme.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Suporte</h3>
+        <ul>
+          <li><a href="#">Agendar Consulta</a></li>
+          <li><a href="#">Dúvidas Frequentes</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Informações úteis</h3>
+        <ul>
+          <li><a href="#">Sobre a Empresa</a></li>
+          <li><a href="#">Equipe Profissional</a></li>
+          <li><a href="#">Serviços Oferecidos</a></li>
+          <li><a href="#">Convênios Atendidos</a></li>
+          <li><a href="#">Blog / Notícias</a></li>
+        </ul>
+      </div>
+
+
+      <div class="social">
+        <h3>Siga-nos</h3>
+        <ul>
+          <li><i class="fab fa-facebook-square"></i> <span>Facebook</span></li>
+          <li><i class="fab fa-instagram"></i> <span>Instagram</span></li>
+          <li><i class="fab fa-x-twitter"></i> <span>X</span></li>
+          <li><i class="fab fa-linkedin"></i> <span>LinkedIn</span></li>
+          <li><i class="fab fa-youtube"></i> <span>YouTube</span></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Menu Mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        nav.setAttribute('data-visible', !isExpanded);
+      });
+    }
+
+    // Atualizar data e hora
+    function updateDateTime() {
+      const now = new Date();
+      const horaDataEl = document.getElementById('horaData');
+      
+      if (horaDataEl) {
+        // Formatar hora (HH:MM)
+        const horas = String(now.getHours()).padStart(2, '0');
+        const minutos = String(now.getMinutes()).padStart(2, '0');
+        
+        // Nomes dos dias da semana e meses por extenso
+        const diasSemana = [
+          'domingo', 'segunda-feira', 'terça-feira', 
+          'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'
+        ];
+        
+        const meses = [
+          'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+          'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+        ];
+        
+        // Obter componentes da data
+        const diaSemana = diasSemana[now.getDay()];
+        const dia = now.getDate();
+        const mes = meses[now.getMonth()];
+        const ano = now.getFullYear();
+        
+        // Formatar a exibição
+        horaDataEl.textContent = `${horas}:${minutos} | ${diaSemana}, ${dia} de ${mes} de ${ano}`;
+      }
+    }
+    
+    // Atualizar imediatamente e depois a cada minuto
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+
+    // Restante do seu código JavaScript permanece igual...
+    // [Manter o restante do código original]
+  });
+</script>
+
+</body>
+</html>
