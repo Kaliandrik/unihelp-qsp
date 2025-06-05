@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UniHelp - Plataforma de agendamento de consultas médicas especializadas. Conectamos pacientes a profissionais de saúde.">
+  <meta name="keywords" content="consulta médica, agendamento online, saúde, fisioterapia, psicólogo">
+  <meta name="author" content="UniHelp">
+  <meta property="og:title" content="UniHelp - Agendamento de Consultas">
+  <meta property="og:type" content="website">
+  
+  <title>cabecalho</title>
+  
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="06 - farmacia solidaria/confirmacaodoacao.css">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Skip Navigation Link (Acessibilidade) -->
+  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="/">
+            <img src="img/UniHelp Logo.png" alt="UniHelp - Logo" width="150" height="50" class="logo__img">
+          </a>
+        </div>
+        
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="hamburger"></span>
+        </button>
+        
+        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="painel_user.html" class="nav__link" aria-current="page">Início</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">Serviços</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">Sobre Nós</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
+            <span id="horaData">00:00 | 00/00/0000</span>
+            <li class="nav__item">
+              <a href="#" class="user-profile" aria-label="Perfil do usuário">
+                <img src="img/seu perfil.jpg" alt="Foto do perfil" width="40" height="40">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <br>
+  <br>
+  <br>
+  <br>
+
+    <!--  ESCREVA SEU CONTEUDO LOGO ABAIXO    --> 
+  <style>
+    
+    
+    .confirmation-container {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      max-width: 600px;
+      text-align: center;
+      margin: 20px;
+    }
+    
+    .confirmation-icon {
+      color: #4CAF50;
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+    
+    p {
+      color: #7f8c8d;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    
+    .donation-details {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 25px 0;
+      text-align: left;
+    }
+    
+    .detail-item {
+      margin-bottom: 10px;
+    }
+    
+    .detail-label {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: #3498db;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    .btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-secondary {
+      background-color: #95a5a6;
+      margin-top: 15px;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #7f8c8d;
+    }
+  </style>
+</head>
+
+  <div class="confirmation-container">
+    <div class="confirmation-icon">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <h1>Doação Confirmada!</h1>
+    <p>Obrigado por sua generosidade e por fazer a diferença na vida de quem precisa.</p>
+    
+    <div class="donation-details">
+      <h3>Detalhes da Doação</h3>
+      <div class="detail-item">
+        <span class="detail-label">Tipo de Doação:</span>
+        <span id="donation-type">Cadeira de rodas</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Descrição:</span>
+        <span id="donation-description">Cadeira de rodas modelo padrão</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Estado:</span>
+        <span id="donation-condition">Usado - Bom estado</span>
+      </div>
+    </div>
+    
+    <p>Entraremos em contato em até 48 horas para combinar a coleta ou entrega dos itens doados.</p>
+    
+    <a href="index.html" class="btn">Voltar à Página Inicial</a>
+    <br>
+    <a href="#" class="btn btn-secondary">Imprimir Comprovante</a>
+  </div>
+
+
+  <script>
+    // Obter parâmetros da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Preencher os dados na página
+    document.getElementById('confirmation-type').textContent = decodeURIComponent(urlParams.get('type') || 'Não especificado');
+    document.getElementById('confirmation-description').textContent = decodeURIComponent(urlParams.get('description') || 'Não especificado');
+    document.getElementById('confirmation-condition').textContent = decodeURIComponent(urlParams.get('condition') || 'Não especificado');
+    document.getElementById('confirmation-name').textContent = decodeURIComponent(urlParams.get('name') || '');
+  </script>
+
+
+
+
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <img class="footer-logo" src="img/UniHelp Logo.png" alt="UniHelp Logo" />
+    <div class="footer-container">
+      <div class="footer-column footer-brand">
+        <h2>Seu bem-estar é a<br><span class="highlight">nossa prioridade.</span></h2>
+        <p>Tem alguma dúvida ou precisa de ajuda? Envie uma mensagem e retornaremos o mais breve possível.</p>
+        <div class="footer-newsletter">
+          <input type="email" placeholder="Digite seu E-mail" />
+          <button><span>Enviar</span></button>
+        </div>
+        <p class="footer-copy">© 2025 UniHelp — Todos os direitos reservados.<br>
+          Desenvolvido por Kaliandrik, Aderlangio, Mateus e Guilherme.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Suporte</h3>
+        <ul>
+          <li><a href="#">Agendar Consulta</a></li>
+          <li><a href="#">Dúvidas Frequentes</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Informações úteis</h3>
+        <ul>
+          <li><a href="#">Sobre a Empresa</a></li>
+          <li><a href="#">Equipe Profissional</a></li>
+          <li><a href="#">Serviços Oferecidos</a></li>
+          <li><a href="#">Convênios Atendidos</a></li>
+          <li><a href="#">Blog / Notícias</a></li>
+        </ul>
+      </div>
+
+
+      <div class="social">
+        <h3>Siga-nos</h3>
+        <ul>
+          <li><i class="fab fa-facebook-square"></i> <span>Facebook</span></li>
+          <li><i class="fab fa-instagram"></i> <span>Instagram</span></li>
+          <li><i class="fab fa-x-twitter"></i> <span>X</span></li>
+          <li><i class="fab fa-linkedin"></i> <span>LinkedIn</span></li>
+          <li><i class="fab fa-youtube"></i> <span>YouTube</span></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Menu Mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        nav.setAttribute('data-visible', !isExpanded);
+      });
+    }
+
+    // Atualizar data e hora
+    function updateDateTime() {
+      const now = new Date();
+      const horaDataEl = document.getElementById('horaData');
+      
+      if (horaDataEl) {
+        // Formatar hora (HH:MM)
+        const horas = String(now.getHours()).padStart(2, '0');
+        const minutos = String(now.getMinutes()).padStart(2, '0');
+        
+        // Nomes dos dias da semana e meses por extenso
+        const diasSemana = [
+          'domingo', 'segunda-feira', 'terça-feira', 
+          'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'
+        ];
+        
+        const meses = [
+          'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+          'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+        ];
+        
+        // Obter componentes da data
+        const diaSemana = diasSemana[now.getDay()];
+        const dia = now.getDate();
+        const mes = meses[now.getMonth()];
+        const ano = now.getFullYear();
+        
+        // Formatar a exibição
+        horaDataEl.textContent = `${horas}:${minutos} | ${diaSemana}, ${dia} de ${mes} de ${ano}`;
+      }
+    }
+    
+    // Atualizar imediatamente e depois a cada minuto
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+
+    // Restante do seu código JavaScript permanece igual...
+    // [Manter o restante do código original]
+  });
+</script>
+
+</body>
+</html>

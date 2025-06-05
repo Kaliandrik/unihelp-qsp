@@ -42,7 +42,7 @@
        
         <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
           <ul class="nav__list">
-            <li class="nav__item"><a href="#" class="nav__link" aria-current="page">Início</a></li>
+            <li class="nav__item"><a href="painel_user.html" class="nav__link" aria-current="page">Início</a></li>
             <li class="nav__item"><a href="#services" class="nav__link">Serviços</a></li>
             <li class="nav__item"><a href="#about" class="nav__link">Sobre Nós</a></li>
             <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
@@ -471,106 +471,58 @@
 
 
 
+<script>
+ document.getElementById('donationForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Verificar campos obrigatórios
+  const requiredFields = this.querySelectorAll('[required]');
+  let isValid = true;
 
- <!-- JavaScript Inline -->
-  <script>
-    // Scroll suave para o formulário
-    document.getElementById('scrollToForm').addEventListener('click', function(e) {
-      e.preventDefault();
-      document.getElementById('donate-form').scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
+  requiredFields.forEach(field => {
+    if (!field.value.trim()) {
+      field.classList.add('is-invalid');
+      isValid = false;
+    } else {
+      field.classList.remove('is-invalid');
+    }
+  });
 
+  // Verificar se o checkbox foi marcado
+  if (!document.getElementById('agreeTerms').checked) {
+    document.getElementById('agreeTerms').classList.add('is-invalid');
+    isValid = false;
+  } else {
+    document.getElementById('agreeTerms').classList.remove('is-invalid');
+  }
 
-    // Controle de campos condicionais
-    const donationTypeSelect = document.getElementById('donationType');
-    const otherItemGroup = document.getElementById('otherItemGroup');
-    const expiryDateGroup = document.getElementById('expiryDateGroup');
+  if (!isValid) {
+    alert('Por favor, preencha todos os campos obrigatórios marcados com *.');
+    return;
+  }
 
+  // Capturar os dados do formulário
+  const donationType = document.getElementById('donationType').value;
+  const itemDescription = document.getElementById('itemDescription').value;
+  const itemCondition = document.getElementById('itemCondition').value;
+  const donorName = document.getElementById('donorName').value;
+  
+  // Determinar o tipo de doação para exibição
+  let displayType = '';
+  const typeSelect = document.getElementById('donationType');
+  displayType = typeSelect.options[typeSelect.selectedIndex].text;
+  
+  if (donationType === 'other') {
+    displayType = document.getElementById('otherItem').value;
+  }
 
-    donationTypeSelect.addEventListener('change', function() {
-      // Mostrar/ocultar campo "Outro item"
-      if (this.value === 'other') {
-        otherItemGroup.style.display = 'block';
-        document.getElementById('otherItem').setAttribute('required', '');
-      } else {
-        otherItemGroup.style.display = 'none';
-        document.getElementById('otherItem').removeAttribute('required');
-      }
-
-
-      // Mostrar/ocultar campo de validade para medicamentos
-      const isMedicine = this.value.includes('medicine') || this.value === 'supplements';
-      expiryDateGroup.style.display = isMedicine ? 'block' : 'none';
-    });
-
-
-    // Validação do formulário
-    document.getElementById('donationForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-     
-      // Verificar campos obrigatórios
-      const requiredFields = this.querySelectorAll('[required]');
-      let isValid = true;
-
-
-      requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-          field.classList.add('is-invalid');
-          isValid = false;
-        } else {
-          field.classList.remove('is-invalid');
-        }
-      });
+  // Redirecionar para confirmardoacao.html com os parâmetros
+  const confirmationUrl = `confirmardoacao.html?type=${encodeURIComponent(displayType)}&description=${encodeURIComponent(itemDescription)}&condition=${encodeURIComponent(itemCondition)}&name=${encodeURIComponent(donorName)}`;
+  
+  window.location.href = confirmationUrl;
+});
 
 
-      // Verificar se o checkbox foi marcado
-      if (!document.getElementById('agreeTerms').checked) {
-        document.getElementById('agreeTerms').classList.add('is-invalid');
-        isValid = false;
-      } else {
-        document.getElementById('agreeTerms').classList.remove('is-invalid');
-      }
-
-
-      if (!isValid) {
-        alert('Por favor, preencha todos os campos obrigatórios marcados com *.');
-        return;
-      }
-
-
-      // Simular envio bem-sucedido
-      alert('Obrigado por sua doação! Entraremos em contato em breve para combinar a coleta.');
-      this.reset();
-     
-      // Em uma aplicação real, você enviaria os dados para o servidor aqui
-      // Exemplo:
-      // const formData = new FormData(this);
-      // fetch('/api/doacoes', { method: 'POST', body: formData })
-      //   .then(response => response.json())
-      //   .then(data => console.log(data))
-      //   .catch(error => console.error(error));
-    });
-
-
-    // Estilo para campos inválidos
-    const style = document.createElement('style');
-    style.textContent = `
-      .is-invalid {
-        border-color: #dc3545 !important;
-      }
-      .form-check-input.is-invalid {
-        outline: 2px solid #dc3545;
-      }
-    `;
-    document.head.appendChild(style);
-
-
-  </script>
-
-
-  <script>
  document.addEventListener('DOMContentLoaded', function() {
   // Efeito de hover dinâmico (pode ser feito apenas com CSS também)
   const cards = document.querySelectorAll('.card-image');
@@ -586,19 +538,6 @@
   });
 });
   </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
