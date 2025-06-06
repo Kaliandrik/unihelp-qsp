@@ -472,7 +472,7 @@
 
 
 <script>
- document.getElementById('donationForm').addEventListener('submit', function(e) {
+document.getElementById('donationForm').addEventListener('submit', function(e) {
   e.preventDefault();
   
   // Verificar campos obrigatórios
@@ -501,11 +501,15 @@
     return;
   }
 
-  // Capturar os dados do formulário
+  // Capturar todos os dados do formulário
   const donationType = document.getElementById('donationType').value;
   const itemDescription = document.getElementById('itemDescription').value;
   const itemCondition = document.getElementById('itemCondition').value;
   const donorName = document.getElementById('donorName').value;
+  const donorEmail = document.getElementById('donorEmail').value;
+  const donorPhone = document.getElementById('donorPhone').value;
+  const donorAddress = document.getElementById('donorAddress').value;
+  const expiryDate = document.getElementById('expiryDate').value;
   
   // Determinar o tipo de doação para exibição
   let displayType = '';
@@ -516,26 +520,27 @@
     displayType = document.getElementById('otherItem').value;
   }
 
-  // Redirecionar para confirmardoacao.html com os parâmetros
-  const confirmationUrl = `confirmardoacao.html?type=${encodeURIComponent(displayType)}&description=${encodeURIComponent(itemDescription)}&condition=${encodeURIComponent(itemCondition)}&name=${encodeURIComponent(donorName)}`;
+  // Redirecionar para confirmardoacao.html com todos os parâmetros
+  const confirmationUrl = `confirmardoacao.html?type=${encodeURIComponent(displayType)}&description=${encodeURIComponent(itemDescription)}&condition=${encodeURIComponent(itemCondition)}&name=${encodeURIComponent(donorName)}&email=${encodeURIComponent(donorEmail)}&phone=${encodeURIComponent(donorPhone)}&address=${encodeURIComponent(donorAddress)}&expiry=${encodeURIComponent(expiryDate)}`;
   
   window.location.href = confirmationUrl;
 });
 
+// Mostrar/ocultar campo "Outro item" conforme seleção
+document.getElementById('donationType').addEventListener('change', function() {
+  const otherItemGroup = document.getElementById('otherItemGroup');
+  otherItemGroup.style.display = this.value === 'other' ? 'block' : 'none';
+  if (this.value === 'other') {
+    document.getElementById('otherItem').required = true;
+  } else {
+    document.getElementById('otherItem').required = false;
+  }
+});
 
- document.addEventListener('DOMContentLoaded', function() {
-  // Efeito de hover dinâmico (pode ser feito apenas com CSS também)
-  const cards = document.querySelectorAll('.card-image');
- 
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-      this.querySelector('img').style.transform = 'scale(1.05)';
-    });
-   
-    card.addEventListener('mouseleave', function() {
-      this.querySelector('img').style.transform = 'scale(1)';
-    });
-  });
+// Mostrar/ocultar campo de validade para medicamentos
+document.getElementById('donationType').addEventListener('change', function() {
+  const expiryDateGroup = document.getElementById('expiryDateGroup');
+  expiryDateGroup.style.display = this.value === 'basic_medicine' ? 'block' : 'none';
 });
   </script>
 

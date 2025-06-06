@@ -74,10 +74,14 @@ body {
   font-family: var(--font-base);
   line-height: 1.6;
   color: var(--color-dark);
-  background-color: var(--color-white);
+  background-image: url('https://euempreendo.org.br/wp-content/uploads/2018/10/cemed-campo-largo-fundo-azul-2500x1563.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);

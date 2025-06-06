@@ -170,12 +170,13 @@ button {
 }
 
 .btn--primary {
-  background-color: var(--color-primary);
+  background-color: #a19100b0;
   color: var(--color-white);
 }
 
 .btn--primary:hover {
-  background-color: rgb(89, 72, 163);
+  background-color: rgb(44, 33, 92);
+  color: white;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }

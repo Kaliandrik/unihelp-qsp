@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UniHelp - Plataforma de agendamento de consultas médicas especializadas. Conectamos pacientes a profissionais de saúde.">
+  <meta name="keywords" content="consulta médica, agendamento online, saúde, fisioterapia, psicólogo">
+  <meta name="author" content="UniHelp">
+  <meta property="og:title" content="UniHelp - Agendamento de Consultas">
+  <meta property="og:type" content="website">
+  
+  <title>Perfil do Usuário</title>
+  
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="07 - Quem somos e configuracoes/perfil_usuário.css">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body style="background: linear-gradient(to bottom, #d7ecff, #f2f9ff);">
+  <!-- Skip Navigation Link (Acessibilidade) -->
+  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="/">
+            <img src="07 - Quem somos e configuracoes/img/UniHelp Logo.png" alt="UniHelp - Logo" width="150" height="50" class="logo__img">
+          </a>
+        </div>
+        
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="hamburger"></span>
+        </button>
+        
+        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="painel_user.html" class="nav__link" aria-current="page">Início</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">Serviços</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">Sobre Nós</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
+            <span id="horaData">00:00 | 00/00/0000</span>
+            <li class="nav__item">
+              <a href="#" class="user-profile" aria-label="Perfil do usuário">
+                <img src="07 - Quem somos e configuracoes/img/FOTO DE PERFIL.jpg" alt="Foto do perfil" width="40" height="40">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <br>
+  <br>
+  <br>
+    <!--  ESCREVA SEU CONTEUDO LOGO ABAIXO    --> 
+  
+
+
+
+    <div class="profile-container">
+    <h1>Dados Pessoais</h1>
+    <img src="07 - Quem somos e configuracoes/img/FOTO DE PERFIL.jpg" alt="FOTO DE PERFIL" style="width: 200px; height: 200px; border-radius: 200px;">
+
+    <div class="info-section personal-info">
+        <h2>DADOS PESSOAIS</h2>
+
+        <div class="info-field">
+            <div class="info-label">NOME COMPLETO*</div>
+            <input type="text" class="info-input" value="Fernanda Dias Souza">
+        </div>
+
+        <div class="info-field">
+            <div class="info-label">DATA DE NASCIMENTO*</div>
+            <div class="dob-inputs">
+              <input type="text" maxlength="2" placeholder="DD" class="dob-inputs" value="16">
+              <span></span>
+              <input type="text" maxlength="2" placeholder="MM" class="dob-inputs" value="05">
+              <span></span>
+              <input type="text" maxlength="4" placeholder="AAAA" class="dob-inputs" value="1987">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="info-section contact-info">
+        <h2>CONTATO</h2>
+
+        <div class="info-field">
+            <div class="info-label">EMAIL*</div>
+            <input type="email" class="info-input" value="fernanda123@gmail.com">
+        </div>
+
+         <div class="info-field">
+            <div class="info-label">TELEFONE*</div>
+            <input type="tel" class="info-input" value="(11) 9-8765-4321">
+        </div>
+
+        
+    </div>
+
+    <div class="info-section medical-info">
+        <h2>INFORMAÇÕES MÉDICAS</h2>
+
+        <div class="info-field">
+            <div class="info-label">TIPO SANGUÍNEO</div>
+            <input type="text" class="info-input pulse" value="O+">
+        </div>
+
+        <div class="info-field">
+            <div class="info-label">ALERGIAS</div>
+            <input type="text" class="info-input" value="Penicilina, Amendoim">
+        </div>
+    </div>
+
+    <div class="info-section password-info">
+  <h2>SENHA</h2>
+  <div class="info-field">
+    <div class="info-label">SENHA*</div>
+    <div class="password-wrapper">
+      <input type="password" class="info-input" id="password" value="suaSenhaAqui">
+      <button type="button" class="toggle-password" aria-label="Mostrar/Ocultar senha">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" viewBox="0 0 24 24">
+    <path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+    <circle cx="12" cy="12" r="2.5"/>
+  </svg>
+</button>
+
+    </div>
+  </div>
+</div>
+
+    <button class="edit-button">ALTERAR INFORMAÇÕES</button>
+</div>
+
+
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <img class="footer-logo" src="img/UniHelp Logo.png" alt="UniHelp Logo" />
+    <div class="footer-container">
+      <div class="footer-column footer-brand">
+        <h2>Seu bem-estar é a<br><span class="highlight">nossa prioridade.</span></h2>
+        <p>Tem alguma dúvida ou precisa de ajuda? Envie uma mensagem e retornaremos o mais breve possível.</p>
+        <div class="footer-newsletter">
+          <input type="email" placeholder="Digite seu E-mail" />
+          <button><span>Enviar</span></button>
+        </div>
+        <p class="footer-copy">© 2025 UniHelp — Todos os direitos reservados.<br>
+          Desenvolvido por Kaliandrik, Aderlangio, Mateus e Guilherme.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Suporte</h3>
+        <ul>
+          <li><a href="#">Agendar Consulta</a></li>
+          <li><a href="#">Dúvidas Frequentes</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Informações úteis</h3>
+        <ul>
+          <li><a href="#">Sobre a Empresa</a></li>
+          <li><a href="#">Equipe Profissional</a></li>
+          <li><a href="#">Serviços Oferecidos</a></li>
+          <li><a href="#">Convênios Atendidos</a></li>
+          <li><a href="#">Blog / Notícias</a></li>
+        </ul>
+      </div>
+
+
+      <div class="social">
+        <h3>Siga-nos</h3>
+        <ul>
+          <li><i class="fab fa-facebook-square"></i> <span>Facebook</span></li>
+          <li><i class="fab fa-instagram"></i> <span>Instagram</span></li>
+          <li><i class="fab fa-x-twitter"></i> <span>X</span></li>
+          <li><i class="fab fa-linkedin"></i> <span>LinkedIn</span></li>
+          <li><i class="fab fa-youtube"></i> <span>YouTube</span></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Menu Mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        nav.setAttribute('data-visible', !isExpanded);
+      });
+    }
+
+    // Atualizar data e hora
+    function updateDateTime() {
+      const now = new Date();
+      const horaDataEl = document.getElementById('horaData');
+      
+      if (horaDataEl) {
+        // Formatar hora (HH:MM)
+        const horas = String(now.getHours()).padStart(2, '0');
+        const minutos = String(now.getMinutes()).padStart(2, '0');
+        
+        // Nomes dos dias da semana e meses por extenso
+        const diasSemana = [
+          'domingo', 'segunda-feira', 'terça-feira', 
+          'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'
+        ];
+        
+        const meses = [
+          'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+          'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+        ];
+        
+        // Obter componentes da data
+        const diaSemana = diasSemana[now.getDay()];
+        const dia = now.getDate();
+        const mes = meses[now.getMonth()];
+        const ano = now.getFullYear();
+        
+        // Formatar a exibição
+        horaDataEl.textContent = `${horas}:${minutos} | ${diaSemana}, ${dia} de ${mes} de ${ano}`;
+      }
+    }
+    
+    // Atualizar imediatamente e depois a cada minuto
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+
+    // Restante do seu código JavaScript permanece igual...
+    // [Manter o restante do código original]
+  });
+</script>
+
+
+
+
+
+
+<!--SCRIPT PARA O OLHO-->
+<script>
+  const togglePassword = document.querySelector('.toggle-password');
+  const passwordInput = document.getElementById('password');
+
+  const eyeOpen = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" viewBox="0 0 24 24">
+    <path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+    <circle cx="12" cy="12" r="2.5"/>
+  </svg>`;
+
+  const eyeClosed = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" viewBox="0 0 24 24">
+    <path d="M17.94 17.94A10.43 10.43 0 0 1 12 19c-7 0-11-7-11-7a16.64 16.64 0 0 1 2.83-4.17m4.2-3.1a5 5 0 0 1 6.71 6.71M1 1l22 22" stroke="black" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </svg>`;
+
+  togglePassword.addEventListener('click', () => {
+    const type = passwordInput.type === 'password' ? 'text' : 'password';
+    passwordInput.type = type;
+    togglePassword.innerHTML = type === 'password' ? eyeOpen : eyeClosed;
+  });
+</script>
+
+</body>
+</html>

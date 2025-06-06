@@ -288,10 +288,6 @@ button {
 
 
 
-
-
-
-
 /* FOOTER */
 .footer {
   background-color: #ffffff;
@@ -584,3 +580,231 @@ button {
     padding: var(--space-lg);
   }
 }
+
+
+
+/*  CSS DA PÁGINA SEM HEADER E RODAPÉ*/
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6f2ff;
+      color: #003366;
+      font-size: 18px;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px;
+      background-color: #d9ecff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .hero-content {
+      max-width: 550px;
+      margin-right: 40px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    .subtext {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #005a99;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 22px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn.primary {
+      background-color: #005a99;
+      color: white;
+    }
+
+    .btn.primary:hover {
+      background-color: #004477;
+    }
+
+    .btn.outline {
+      background: transparent;
+      border: 2px solid #005a99;
+      color: #005a99;
+    }
+
+    .btn.outline:hover {
+      background-color: #cce6ff;
+    }
+
+    .hero-image img {
+      max-width: 340px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    /* Seções */
+    section {
+      padding: 50px 20px;
+    }
+
+    /* Cards */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      max-width: 340px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      font-size: 17px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #005a99;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .card ol {
+      padding-left: 22px;
+      color: #333;
+    }
+
+    .card li {
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    /* Depoimento */
+.depoimento {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-left: 6px solid #0077cc;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 50px auto;
+  font-style: italic;
+  font-size: 21px;
+  color: #333;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.depoimento {
+  position: relative;
+  cursor: pointer;
+}
+
+.depoimento blockquote::after {
+  content: "♥";
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  font-size: 50px;
+  color: #ff6b81;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+.depoimento:hover blockquote::after {
+  opacity: 1;
+}
+.depoimento blockquote {
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+}
+
+.depoimento blockquote:hover {
+  animation: shake 0.3s ease-in-out 1;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-4px);
+  }
+  40%, 80% {
+    transform: translateX(4px);
+  }
+}
+
+
+
+
+
+
+    /* Contato */
+    .contato {
+      text-align: center;
+    }
+
+    .contato h2 {
+      font-size: 28px;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .contato p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-content {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+    

@@ -1,97 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="UniHelp - Plataforma de agendamento de consultas médicas especializadas. Conectamos pacientes a profissionais de saúde.">
+  <meta name="description"
+    content="UniHelp - Plataforma de agendamento de consultas médicas especializadas. Conectamos pacientes a profissionais de saúde.">
   <meta name="keywords" content="consulta médica, agendamento online, saúde, fisioterapia, psicólogo">
   <meta name="author" content="UniHelp">
   <meta property="og:title" content="UniHelp - Agendamento de Consultas">
   <meta property="og:type" content="website">
-  
-  <title>cabecalho</title>
-  
+
+  <title>Confirmação de Doação - UniHelp</title>
+
   <!-- Preload de recursos críticos -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
-  
+
   <!-- CSS -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="06 - farmacia solidaria/confirmacaodoacao.css">
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
-</head>
-<body>
-  <!-- Skip Navigation Link (Acessibilidade) -->
-  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
 
-  <!-- HEADER -->
-  <header class="header" role="banner">
-    <div class="container">
-      <div class="header__inner">
-        <div class="logo">
-          <a href="/">
-            <img src="img/UniHelp Logo.png" alt="UniHelp - Logo" width="150" height="50" class="logo__img">
-          </a>
-        </div>
-        
-        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
-          <span class="hamburger"></span>
-        </button>
-        
-        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
-          <ul class="nav__list">
-            <li class="nav__item"><a href="painel_user.html" class="nav__link" aria-current="page">Início</a></li>
-            <li class="nav__item"><a href="#services" class="nav__link">Serviços</a></li>
-            <li class="nav__item"><a href="#about" class="nav__link">Sobre Nós</a></li>
-            <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
-            <span id="horaData">00:00 | 00/00/0000</span>
-            <li class="nav__item">
-              <a href="#" class="user-profile" aria-label="Perfil do usuário">
-                <img src="img/seu perfil.jpg" alt="Foto do perfil" width="40" height="40">
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
-  <br>
-  <br>
-  <br>
-  <br>
-
-    <!--  ESCREVA SEU CONTEUDO LOGO ABAIXO    --> 
   <style>
-    
-    
+    .main-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 200px);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
     .confirmation-container {
       background-color: white;
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       padding: 40px;
       max-width: 600px;
+      width: 100%;
       text-align: center;
-      margin: 20px;
     }
-    
+
     .confirmation-icon {
       color: #4CAF50;
       font-size: 72px;
       margin-bottom: 20px;
     }
-    
+
     h1 {
       color: #2c3e50;
       margin-bottom: 15px;
     }
-    
+
     p {
       color: #7f8c8d;
       margin-bottom: 25px;
       line-height: 1.6;
     }
-    
+
     .donation-details {
       background-color: #f8f9fa;
       border-radius: 10px;
@@ -99,16 +67,16 @@
       margin: 25px 0;
       text-align: left;
     }
-    
+
     .detail-item {
       margin-bottom: 10px;
     }
-    
+
     .detail-label {
       font-weight: bold;
       color: #2c3e50;
     }
-    
+
     .btn {
       display: inline-block;
       background-color: #3498db;
@@ -122,73 +90,148 @@
       cursor: pointer;
       font-size: 16px;
     }
-    
+
     .btn:hover {
-      background-color: #2980b9;
+      color: #f8f9fa;
+      background-color: #438cbd;
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
-    
+
     .btn-secondary {
+      color: white;
       background-color: #95a5a6;
       margin-top: 15px;
     }
-    
+
     .btn-secondary:hover {
+      color: white;
       background-color: #7f8c8d;
     }
+
+    /* Efeito das bolinhas flutuantes */
+.bubble {
+  position: fixed;
+  bottom: -100px;
+  background-color: rgba(46, 204, 113, 0.6);
+  border-radius: 50%;
+  animation: floating linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
   </style>
 </head>
 
-  <div class="confirmation-container">
-    <div class="confirmation-icon">
-      <i class="fas fa-check-circle"></i>
+<body>
+
+  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="/"><img src="06 - farmacia solidaria/img/UniHelp Logo.png" alt="UniHelp - Logo" width="150" height="50" class="logo__img"></a>
+        </div>
+
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="hamburger"></span>
+        </button>
+
+        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="painel_user.html" class="nav__link">Início</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">Serviços</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">Sobre Nós</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
+            <span id="horaData">00:00 | 00/00/0000</span>
+            <li class="nav__item">
+              <a href="#" class="user-profile" aria-label="Perfil do usuário">
+                <img src="06 - farmacia solidaria/img/seu perfil.jpg" alt="Foto do perfil" width="40" height="40">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <h1>Doação Confirmada!</h1>
-    <p>Obrigado por sua generosidade e por fazer a diferença na vida de quem precisa.</p>
-    
-    <div class="donation-details">
-      <h3>Detalhes da Doação</h3>
-      <div class="detail-item">
-        <span class="detail-label">Tipo de Doação:</span>
-        <span id="donation-type">Cadeira de rodas</span>
+  </header>
+
+  <br><br><br><br>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="main-container">
+    <div class="confirmation-container">
+      <i class="fas fa-check-circle confirmation-icon"></i>
+      <h1>Doação Confirmada!</h1>
+      <p>Obrigado por sua generosidade e por fazer a diferença na vida de quem precisa.</p>
+
+      <div class="donation-details">
+        <h3>Detalhes da Doação</h3>
+        <div class="detail-item"><span class="detail-label">Tipo de Doação:</span> <span id="donation-type">Cadeira de rodas</span></div>
+        <div class="detail-item"><span class="detail-label">Descrição:</span> <span id="donation-description">Cadeira de rodas modelo padrão</span></div>
+        <div class="detail-item"><span class="detail-label">Estado:</span> <span id="donation-condition">Usado - Bom estado</span></div>
+        <div class="detail-item" id="expiry-display"><span class="detail-label">Validade:</span> <span id="donation-expiry">-</span></div>
+        <div class="detail-item"><span class="detail-label">Doador:</span> <span id="donation-name">-</span></div>
+        <div class="detail-item"><span class="detail-label">E-mail:</span> <span id="donation-email">-</span></div>
+        <div class="detail-item"><span class="detail-label">Telefone:</span> <span id="donation-phone">-</span></div>
+        <div class="detail-item" id="address-display"><span class="detail-label">Endereço para coleta:</span> <span id="donation-address">-</span></div>
       </div>
-      <div class="detail-item">
-        <span class="detail-label">Descrição:</span>
-        <span id="donation-description">Cadeira de rodas modelo padrão</span>
-      </div>
-      <div class="detail-item">
-        <span class="detail-label">Estado:</span>
-        <span id="donation-condition">Usado - Bom estado</span>
-      </div>
+
+      <p>Entraremos em contato em até 48 horas para combinar a coleta ou entrega dos itens doados.</p>
+      <a href="painel_user.html" class="btn">Voltar à Página Inicial</a><br>
+      <a href="#" class="btn btn-secondary" onclick="window.print()">Imprimir Comprovante</a>
     </div>
-    
-    <p>Entraremos em contato em até 48 horas para combinar a coleta ou entrega dos itens doados.</p>
-    
-    <a href="index.html" class="btn">Voltar à Página Inicial</a>
-    <br>
-    <a href="#" class="btn btn-secondary">Imprimir Comprovante</a>
   </div>
 
-
+  <!-- SCRIPT PARA PREENCHER OS DADOS -->
   <script>
-    // Obter parâmetros da URL
     const urlParams = new URLSearchParams(window.location.search);
-    
-    // Preencher os dados na página
-    document.getElementById('confirmation-type').textContent = decodeURIComponent(urlParams.get('type') || 'Não especificado');
-    document.getElementById('confirmation-description').textContent = decodeURIComponent(urlParams.get('description') || 'Não especificado');
-    document.getElementById('confirmation-condition').textContent = decodeURIComponent(urlParams.get('condition') || 'Não especificado');
-    document.getElementById('confirmation-name').textContent = decodeURIComponent(urlParams.get('name') || '');
+
+    function translateCondition(condition) {
+      const conditions = {
+        'new': 'Novo',
+        'good': 'Bom estado',
+        'regular': 'Estado regular'
+      };
+      return conditions[condition] || condition;
+    }
+
+    document.getElementById('donation-type').textContent = decodeURIComponent(urlParams.get('type') || 'Não especificado');
+    document.getElementById('donation-description').textContent = decodeURIComponent(urlParams.get('description') || 'Não especificado');
+    document.getElementById('donation-condition').textContent = translateCondition(decodeURIComponent(urlParams.get('condition') || 'Não especificado'));
+    document.getElementById('donation-name').textContent = decodeURIComponent(urlParams.get('name') || 'Não informado');
+    document.getElementById('donation-email').textContent = decodeURIComponent(urlParams.get('email') || 'Não informado');
+    document.getElementById('donation-phone').textContent = decodeURIComponent(urlParams.get('phone') || 'Não informado');
+
+    const address = decodeURIComponent(urlParams.get('address') || '');
+    if (address) {
+      document.getElementById('donation-address').textContent = address;
+    } else {
+      document.getElementById('address-display').style.display = 'none';
+    }
+
+    const expiry = decodeURIComponent(urlParams.get('expiry') || '');
+    if (expiry) {
+      document.getElementById('donation-expiry').textContent = new Date(expiry).toLocaleDateString('pt-BR');
+    } else {
+      document.getElementById('expiry-display').style.display = 'none';
+    }
   </script>
-
-
-
-
 
   <!-- RODAPÉ -->
   <footer class="footer">
-    <img class="footer-logo" src="img/UniHelp Logo.png" alt="UniHelp Logo" />
+    <img class="footer-logo" src="06 - farmacia solidaria/img/UniHelp Logo.png" alt="UniHelp Logo" />
     <div class="footer-container">
       <div class="footer-column footer-brand">
         <h2>Seu bem-estar é a<br><span class="highlight">nossa prioridade.</span></h2>
@@ -212,7 +255,7 @@
           <li><a href="#">Contato</a></li>
         </ul>
       </div>
-      
+
       <div class="footer-column">
         <h3>Informações úteis</h3>
         <ul>
@@ -223,7 +266,6 @@
           <li><a href="#">Blog / Notícias</a></li>
         </ul>
       </div>
-
 
       <div class="social">
         <h3>Siga-nos</h3>
@@ -237,60 +279,97 @@
       </div>
     </div>
   </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Menu Mobile
-    const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
-    
-    if (navToggle && nav) {
-      navToggle.addEventListener('click', function() {
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !isExpanded);
-        nav.setAttribute('data-visible', !isExpanded);
-      });
-    }
 
-    // Atualizar data e hora
-    function updateDateTime() {
-      const now = new Date();
-      const horaDataEl = document.getElementById('horaData');
-      
-      if (horaDataEl) {
-        // Formatar hora (HH:MM)
-        const horas = String(now.getHours()).padStart(2, '0');
-        const minutos = String(now.getMinutes()).padStart(2, '0');
-        
-        // Nomes dos dias da semana e meses por extenso
-        const diasSemana = [
-          'domingo', 'segunda-feira', 'terça-feira', 
-          'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'
-        ];
-        
-        const meses = [
-          'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
-          'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
-        ];
-        
-        // Obter componentes da data
-        const diaSemana = diasSemana[now.getDay()];
-        const dia = now.getDate();
-        const mes = meses[now.getMonth()];
-        const ano = now.getFullYear();
-        
-        // Formatar a exibição
-        horaDataEl.textContent = `${horas}:${minutos} | ${diaSemana}, ${dia} de ${mes} de ${ano}`;
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navToggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.nav');
+
+      if (navToggle && nav) {
+        navToggle.addEventListener('click', function () {
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !isExpanded);
+          nav.setAttribute('data-visible', !isExpanded);
+        });
       }
-    }
-    
-    // Atualizar imediatamente e depois a cada minuto
-    updateDateTime();
-    setInterval(updateDateTime, 60000);
 
-    // Restante do seu código JavaScript permanece igual...
-    // [Manter o restante do código original]
-  });
+      function updateDateTime() {
+        const now = new Date();
+        const horaDataEl = document.getElementById('horaData');
+
+        if (horaDataEl) {
+          const horas = String(now.getHours()).padStart(2, '0');
+          const minutos = String(now.getMinutes()).padStart(2, '0');
+          const diasSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+          const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+          const diaSemana = diasSemana[now.getDay()];
+          const dia = now.getDate();
+          const mes = meses[now.getMonth()];
+          const ano = now.getFullYear();
+
+          horaDataEl.textContent = `${horas}:${minutos} | ${diaSemana}, ${dia} de ${mes} de ${ano}`;
+        }
+      }
+
+      updateDateTime();
+      setInterval(updateDateTime, 60000);
+    });
+  </script>
+
+
+
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+
+
+
+  <script>
+// Cria bolinhas flutuantes
+document.addEventListener('DOMContentLoaded', function() {
+  function createBubble() {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+    
+    // Tamanho aleatório
+    const size = Math.random() * 30 + 10;
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    
+    // Posição horizontal aleatória
+    bubble.style.left = `${Math.random() * 100}%`;
+    
+    // Duração e delay da animação
+    bubble.style.animationDuration = `${Math.random() * 20 + 10}s`;
+    bubble.style.animationDelay = `${Math.random() * 5}s`;
+    
+    document.body.appendChild(bubble);
+    
+    // Remove a bolinha quando a animação terminar
+    bubble.addEventListener('animationend', function() {
+      bubble.remove();
+      createBubble(); // Cria uma nova bolinha
+    });
+  }
+
+  // Cria bolinhas iniciais
+  for (let i = 0; i < 10; i++) {
+    createBubble();
+  }
+});
 </script>
 
+
+
 </body>
+
 </html>
